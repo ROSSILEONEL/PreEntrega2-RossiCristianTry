@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import products from "../Mocks/products";
+import products from "../../Mocks/products";
 import ItemList from "../ItemList/index.jsx"
 
 function ItemListContainer(){

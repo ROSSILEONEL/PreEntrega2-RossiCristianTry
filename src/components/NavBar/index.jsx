@@ -7,14 +7,10 @@ function NavBar({pruebaUse}){
         <span>{pruebaUse}</span>
             {/* <li><NavLink to={"/"}><img src={img} alt="Logo Vivero" className="logo"/></NavLink></li>             */}
             <li><NavLink to={"/"}>Home</NavLink></li>
-            <li><NavLink to={""}>Productos</NavLink></li>
+            <li><NavLink to={"/item"}>Productos</NavLink></li>
             <li><NavLink to={""}>Galeria</NavLink></li>
-            {/* <li><NavLink to={"/category/interior"}>Home</NavLink></li>
-            <li><NavLink to={"/category/exterior"}>Productos</NavLink></li>
-            <li><NavLink to={"/category/sombra"}>Galeria</NavLink></li> */}
-            {/* <li><CartWidget /></li>             */}
-        
-        </ul>
+            
+                    </ul>
 
 
 

@@ -1,7 +1,7 @@
 export default [
     {
     id:1,
-    name:"modelo -A",
+    name:"Supreme concav",
     material:"maple",
     precio:4000,
     stock:20,
@@ -12,7 +12,7 @@ export default [
 
     {
     id:2,
-    name:"modelo -A",
+    name:"Midnight Dark",
     material:"maple",
     precio:4000,
     stock:20,

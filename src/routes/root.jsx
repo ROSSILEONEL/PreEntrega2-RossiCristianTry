@@ -1,10 +1,10 @@
 import { useState , useEffect } from "react";
-import ItemListContainer from "./components/ItemListContainer/index"
+import ItemListContainer from "../components/ItemListContainer/index"
 // import { useEffect } from "react";
-import NavBar from "./components/NavBar/index";
+import NavBar from "../components/NavBar/index";
 
 
-function App() {
+function Root() {
   
   const [useE, setUseE]=useState("Estoy probando pasar por props un useEfect");
   useEffect(()=>{
@@ -43,4 +43,4 @@ return (
 }
 
 
-export default App;
+export default Root;
