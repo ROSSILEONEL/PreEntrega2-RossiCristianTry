@@ -23,6 +23,8 @@ import {  createBrowserRouter,  RouterProvider} from "react-router-dom";
 // const app = initializeApp(firebaseConfig);
 import ItemRoot from './routes/item';
 import Root from './routes/root'
+import ItemDetail from './components/ItemDetail';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 const router = createBrowserRouter([
 
@@ -37,7 +39,7 @@ const router = createBrowserRouter([
       },
          {
         path: "/item/:id",
-        element: <ItemRoot/>,
+        element: <ItemDetailContainer/>,
       },
          {
         path: "/cart",

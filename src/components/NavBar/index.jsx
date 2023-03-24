@@ -7,7 +7,7 @@ function NavBar(){
         <span>LAZY SKATE</span>
                         
             <li><NavLink to={"/"}>Home</NavLink></li>
-            <li><NavLink to={"/item/:id"}>Productos</NavLink></li>
+            
             <li><NavLink to={"/category/buzo"}>Buzo</NavLink></li>
             <li><NavLink to={"/category/deck"}>deck</NavLink></li>
             
