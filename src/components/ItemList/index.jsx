@@ -9,7 +9,7 @@ function ItemList({item}) {
   return(
 
    item.map((products,index)=>
-   <Item arrP={products} key={products.id}/>)
+   <Item  arrP={products} key={products.id}/>)
     )
 }
   

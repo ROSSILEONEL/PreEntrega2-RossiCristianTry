@@ -2,45 +2,34 @@ import { useState , useEffect } from "react";
 import ItemListContainer from "../components/ItemListContainer/index"
 // import { useEffect } from "react";
 import NavBar from "../components/NavBar/index";
+import { useParams } from "react-router-dom";
 
-
+//use Params es un Hook de React
 function Root() {
+   const param = useParams()
   
-  const [useE, setUseE]=useState("Estoy probando pasar por props un useEfect");
-  useEffect(()=>{
-    setTimeout(()=>setUseE("Actualizacion de la prueba useEffect"),10000);
-  },[]);
-  
-  const [greeting, setGreeting]= useState("Hola manga de trolos");
-  const cambio =()=> {setGreeting("adios putoooooooooooooooooooooooooos")};
+   const isCategoryRoute= Boolean(param.id) ;
+  const categoryId=param.id;
 
 
+  console.log("CATEGORI",{isCategoryRoute});
+   //  console.log( "param del root" ,{param});
   
-  return (
-    <div className="div-app">
-      <NavBar pruebaUse={useE}/>
-      <Description toma={cambio}/>
-      <ItemListContainer >{greeting}      </ItemListContainer >
-
-{/* para que se muestre mientras greeting valga menos de 3 , sirve para no mostrar los productos que no  hay stock  */}
-      {/* {greeting<= 3 && <ItemListContainer greeting ={greeting} />} */}
-  <h1>{greeting}</h1>
+  
+   return (
+    <div >
+      
+      <NavBar />
+      <ItemListContainer isCategoryRoute={isCategoryRoute} categoryId={categoryId} />
+    
     </div>
 
+
+       
           );
-       }
-
-      
-
-function Description({toma}){
-return (
-<div>
+      }
 
 
-<button onClick={toma}> adios </button>
-
-</div>);
-}
 
 
 export default Root;

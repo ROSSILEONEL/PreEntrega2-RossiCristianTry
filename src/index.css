@@ -1,6 +1,6 @@
 .div-app{
-  background-color: yellow;
-  border-color:solid 3 blue;
+  background-color: rgb(255, 255, 255);
+  border-color:solid 3 rgb(5, 5, 5);
   height: 100vh;
   min-width: 100vh;
 }
