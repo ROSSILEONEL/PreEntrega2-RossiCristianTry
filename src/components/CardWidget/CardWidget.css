@@ -1,0 +1,13 @@
+.nav-icon{
+    font-weight: 700;
+    font-size: 21px;
+    margin: 15px;
+}
+span{
+    font-size: 5;
+    opacity: 0.6;
+}
+.Card-Widget{
+    font-size: 5;
+border-bottom: solid rgb(24, 23, 23);
+}

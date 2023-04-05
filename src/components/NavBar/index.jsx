@@ -1,23 +1,30 @@
 import './NavBar.css'
 import {NavLink} from 'react-router-dom'
+import CardWidget from '../CardWidget'
+
 function NavBar(){
     return(
     <div className='div-navBar'>
-    <ul className="lista">
-        <span>LAZY SKATE</span>
-                        
+        <ul className="lista">
+             <NavLink to={"/"}><span>LAZY SKATE</span></NavLink>
             <li><NavLink to={"/"}>Home</NavLink></li>
-            
             <li><NavLink to={"/category/buzo"}>Buzo</NavLink></li>
             <li><NavLink to={"/category/deck"}>deck</NavLink></li>
-            
-                    </ul>
+            <NavLink to={"/category/CardWidget"}><CardWidget/></NavLink>
+        </ul>
+    </div>  
+          )
+               }
 
+export default NavBar
+
+        
+                        
+            
+  
+            
 
 
 
           
-    </div>  )
     
-}
-export default NavBar

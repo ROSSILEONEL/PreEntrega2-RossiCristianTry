@@ -1,20 +1,20 @@
 // import products from "../Mocks/products";
 // import ItemList from "../ItemList/index.jsx"
-import NavBar from "../components/NavBar/index";
-import  ItemDetailContainer  from "../components/ItemDetailContainer";
+// import NavBar from "../components/NavBar/index";
 // import { doc,getDoc, getFireStore } from "firebase/firestore";
+import  ItemDetailContainer  from "../components/ItemDetailContainer";
 
 function ItemRoot(){
     
  
-    return (
-   <div>
-    <NavBar/>
-    <ItemDetailContainer/>
-   </div>
+     return (
+            <div>
+               <ItemDetailContainer/>
+            </div>
+ )
+}
+export default ItemRoot;
+ 
 
    
-        )
-       }
-       export default ItemRoot;
         

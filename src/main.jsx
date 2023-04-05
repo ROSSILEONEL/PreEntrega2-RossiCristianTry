@@ -1,7 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
+import React, { Children } from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+
 import {  createBrowserRouter,  RouterProvider} from "react-router-dom";
+import {CustomProvider} from "./context";
 
 // Import the functions you need from the SDKs you need
 // initializeApp
@@ -21,39 +23,53 @@ import {  createBrowserRouter,  RouterProvider} from "react-router-dom";
 
 // // Initialize Firebase
 // const app = initializeApp(firebaseConfig);
+import  Layout  from "./components/Layout";
 import ItemRoot from './routes/item';
-import Root from './routes/root'
-import ItemDetail from './components/ItemDetail';
+import Root from './routes/root';
+
 import ItemDetailContainer from './components/ItemDetailContainer';
+import CardWidget from './components/CardWidget';
 
 const router = createBrowserRouter([
+{
+  element:<Layout/>,
+  children:[
+    {
+      path: "/",
+      element: <Root/>,
+        },
+        {
+          path: "/category/:id",
+          element: <Root/>,
+        },
+           {
+          path: "/item/:id",
+          element: <ItemDetailContainer/>,
+        },
+           {
+          path: "/cart",
+          element: <ItemRoot/>,
+        },
+           {
+          path: "/checkout",
+          element: <ItemRoot/>,
+        }
+        ,
+           {
+          path: "/CardWidget",
+          element: <CardWidget/>,
+        }
+  ]
+}
 
-
-  {
-    path: "/",
-    element: <Root/>,
-      },
-      {
-        path: "/category/:id",
-        element: <Root/>,
-      },
-         {
-        path: "/item/:id",
-        element: <ItemDetailContainer/>,
-      },
-         {
-        path: "/cart",
-        element: <ItemRoot/>,
-      },
-         {
-        path: "/checkout",
-        element: <ItemRoot/>,
-      }
-      ,]);
+  
+      ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   {/* //   <App /> */}
+  <CustomProvider>
   <RouterProvider router={router} />
+  </CustomProvider>
   </React.StrictMode>
 )
