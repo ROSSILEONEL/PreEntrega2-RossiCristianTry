@@ -9,8 +9,17 @@ export  function CustomProvider({children}){
     const [productsAdded,setProductsAdded]=useState([]);
 function onAdd(products,quantity) {
     
-setProductsAdded(productsAdded.concat(products*quantity));
-console.log(`ESTE CONSOLE ESTA EN CONTEXT Y LA QUANTITY ES DE : ${quantity}`);
+    
+    setProductsAdded((prevState)=>prevState.concat(products));
+    const newProducts=[];
+    for(let i=0;i<quantity;i++){
+        newProducts.push(products)
+    }
+    setProductsAdded([...productsAdded,...newProducts]);
+
+
+
+    console.log(`ESTE CONSOLE ESTA EN CONTEXT Y LA QUANTITY ES DE : ${quantity}`);
 console.log(`ESTE CONSOLE ESTA EN CONTEXT Y LOS PRODUSCTOS AGREGADOS SON : ${productsAdded}`);
 
 };

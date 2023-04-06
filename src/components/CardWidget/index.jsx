@@ -6,7 +6,7 @@ function CardWidget (){
    const {productsAdded}= useContext(cartContext);
 
    console.log("context",cartContext);
-   console.log("prod added",productsAdded);
+   console.log("prod added",{productsAdded});
     
    return(
         <div className='Card-Widget'>

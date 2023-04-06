@@ -16,8 +16,7 @@ export const ItemCount=({stock,onAdd})=>{
       }
     };
   
-    const handleDecrease = () => {
-      if (count > initial) {
+    const handleDecrease = () => {  if (count > 1) {
         setCount(count - 1);
         setCanAddToCart(true);
       }
