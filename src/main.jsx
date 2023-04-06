@@ -4,6 +4,7 @@ import './index.css';
 
 import {  createBrowserRouter,  RouterProvider} from "react-router-dom";
 import {CustomProvider} from "./context";
+import { cartContext } from "./context";
 
 // Import the functions you need from the SDKs you need
 // initializeApp

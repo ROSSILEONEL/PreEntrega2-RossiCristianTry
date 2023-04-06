@@ -6,7 +6,7 @@ export const ItemCount=({initial,stock,onAdd})=>{
   const [value,setValue]=useState(initial);
   const aumentar =()=>{setValue(value+1)}
   const disminuir =()=>{setValue(value-1)}                    
-
+console.log("STOCK",{stock});
   return(    
         <div>
             <div>

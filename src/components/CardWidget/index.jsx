@@ -1,17 +1,17 @@
 import { useContext } from 'react';
 import './CardWidget.css'
-import  {Context}  from '../../context/index';
+import  {cartContext}  from '../../context';
 
 function CardWidget (){
-   const {producstAdded}= useContext(Context);
+   const {productsAdded}= useContext(cartContext);
 
-   console.log("context",Context);
-   console.log("prod added",producstAdded);
+   console.log("context",cartContext);
+   console.log("prod added",productsAdded);
     
    return(
         <div className='Card-Widget'>
-            <i  className="bi bi-cart nav-icon"></i>
-            {producstAdded}
+            <i  className="bi bi-cart nav-icon">  {productsAdded.length}</i>
+          
         </div>
         )
            
