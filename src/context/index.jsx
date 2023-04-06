@@ -9,7 +9,9 @@ export  function CustomProvider({children}){
     const [productsAdded,setProductsAdded]=useState([]);
 function onAdd(products,quantity) {
     
-setProductsAdded((prevState)=> prevState.concat(products));
+setProductsAdded(productsAdded.concat(products*quantity));
+console.log(`ESTE CONSOLE ESTA EN CONTEXT Y LA QUANTITY ES DE : ${quantity}`);
+console.log(`ESTE CONSOLE ESTA EN CONTEXT Y LOS PRODUSCTOS AGREGADOS SON : ${productsAdded}`);
 
 };
 

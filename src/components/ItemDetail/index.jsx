@@ -6,18 +6,16 @@ import { useState } from "react";
 
 function ItemDetail({itemF}) {
    const {onAdd}=useContext(cartContext);
-const [added, setAdded]=useState(0);
+   const [added, setAdded]=useState(0);
 
  function onAddProduct(count){
-    setAdded(count);
-    onAdd(itemF,count)
+            setAdded(count);
+            onAdd(itemF,count)
  }
  
  
     return(
     <div>
-
-
 <div className="div-information">
 <h1>{itemF.name}</h1>
 <p>{itemF.descripcion}</p>
@@ -26,6 +24,8 @@ const [added, setAdded]=useState(0);
 <p>Stock: {itemF.stock}</p>
 <h3>   $ {itemF.precio}    </h3>
 </div>
+
+
     
 
 <div className="div-count">
