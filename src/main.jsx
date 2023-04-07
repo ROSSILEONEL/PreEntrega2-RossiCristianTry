@@ -4,7 +4,9 @@ import './index.css';
 
 import {  createBrowserRouter,  RouterProvider} from "react-router-dom";
 import {CustomProvider} from "./context";
-import { cartContext } from "./context";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 // Import the functions you need from the SDKs you need
 // initializeApp
@@ -28,8 +30,10 @@ import  Layout  from "./components/Layout";
 import ItemRoot from './routes/item';
 import Root from './routes/root';
 
+
 import ItemDetailContainer from './components/ItemDetailContainer';
 import CardWidget from './components/CardWidget';
+import Cart from './components/CartView';
 
 const router = createBrowserRouter([
 {
@@ -46,20 +50,23 @@ const router = createBrowserRouter([
            {
           path: "/item/:id",
           element: <ItemDetailContainer/>,
-        },
-           {
-          path: "/cart",
-          element: <ItemRoot/>,
-        },
+        }
+           
+        ,
            {
           path: "/checkout",
           element: <ItemRoot/>,
         }
         ,
            {
-          path: "/CardWidget",
-          element: <CardWidget/>,
+          path: "/Card",
+          element: <Cart/>,
         }
+        ,
+        //    {
+        //   path: "/Cart",
+        //   element: <cart/>,
+        // }
   ]
 }
 

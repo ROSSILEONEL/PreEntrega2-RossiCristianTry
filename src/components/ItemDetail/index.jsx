@@ -2,6 +2,9 @@ import { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { cartContext } from "../../context";
 import { useState } from "react";
+// import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+
 
 
 function ItemDetail({itemF}) {
@@ -15,7 +18,7 @@ function ItemDetail({itemF}) {
  
  
     return(
-    <div>
+    <Container className="p-3">
 <div className="div-information">
 <h1>{itemF.name}</h1>
 <p>{itemF.descripcion}</p>
@@ -31,7 +34,7 @@ function ItemDetail({itemF}) {
 <div className="div-count">
 <ItemCount stock={itemF.stock} onAdd={onAddProduct}/>
 </div>
-    </div>
+    </Container>
  )
 }
 export default ItemDetail

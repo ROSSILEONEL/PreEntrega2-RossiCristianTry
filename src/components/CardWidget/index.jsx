@@ -10,7 +10,11 @@ function CardWidget (){
     
    return(
         <div className='Card-Widget'>
+            
+            {/* <NavLink to={"/cart"}> */}
+                
             <i  className="bi bi-cart nav-icon">  {productsAdded.length}</i>
+                {/* </NavLink> */}
           
         </div>
         )

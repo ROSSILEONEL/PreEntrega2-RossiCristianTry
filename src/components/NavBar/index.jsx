@@ -10,7 +10,7 @@ function NavBar(){
             <li><NavLink to={"/"}>Home</NavLink></li>
             <li><NavLink to={"/category/buzo"}>Buzo</NavLink></li>
             <li><NavLink to={"/category/deck"}>deck</NavLink></li>
-            <NavLink to={"/category/CardWidget"}><CardWidget/></NavLink>
+            <NavLink to={"/Card"}><CardWidget/></NavLink>
         </ul>
     </div>  
           )
