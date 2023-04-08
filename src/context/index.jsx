@@ -3,42 +3,55 @@ import { createContext , useState } from "react";
 
 export const  cartContext= createContext();
 export  function CustomProvider({children}){
-    // lo que pasemos por el value del proveedor , es lo que los componentes van a poder acceder o leer
-    // se pueden poner todo tipo de variables.
-    
     const [productsAdded,setProductsAdded]=useState([]);
-
-
+    
     function onAdd(products,quantity) {
-    
-        setProductsAdded((prevState)=>prevState.concat(products));
-        const newProducts=[];
-        for(let i=0;i<quantity;i++){
-            newProducts.push(products)
+        const isAlreadyAdded=isInCart(products);
+
+        if(isAlreadyAdded){
+            const productToModify=productsAdded.find((productAdded)=>productAdded.id===products.id);
+            const productModified={...productToModify,quantity:productToModify.quantity+quantity};
+            setProductsAdded((prevState)=>prevState.map(productsAdded.id===products.id?productModified:productsAdded));
+        }  
+        else{
+            setProductsAdded((prevState)=>prevState.concat({...products,quantity}));
+        } 
+        
+        function isInCart(products) {
+            return productsAdded.some((productAdded)=> productAdded.id===products.id)
         }
-        // setProductsAdded([...productsAdded,...newProducts]);
-        setProductsAdded(productsAdded.concat(...newProducts));
-        console.log(`ESTE CONSOLE ESTA EN CONTEXT Y LA QUANTITY ES DE : ${quantity}`);
-        console.log(`ESTE CONSOLE ESTA EN CONTEXT Y LOS PRODUSCTOS AGREGADOS SON : ${productsAdded}`);
-        console.log(`ESTE CONSOLE ESTA EN CONTEXT Y LOS PRODUSCTOS AGREGADOS SON : ${productsAdded.id}`);
     };
- 
-    function clear() {    
-    }
-    function removeItem(itemId) {
-        
-    }
-    function isInCart(products) {
-        return productsAdded.find((item)=> item.id===products.id)
-        
-    }
     
-
-
-
-
-
-    return <cartContext.Provider value={{productsAdded, onAdd }}>
+    
+    
+    
+    
+    
+    
+    
+    const totalProducts=()=>productsAdded.reduce((acumulador,prodActual)=>acumulador+prodActual.quantity,0)
+    const totalPrice=()=>{
+        productsAdded.reduce((prev,actual)=>prev+actual.quantity*actual.price,0)
+    }
+    function clear() {    
+        
+        setProductsAdded([])
+        return (alert("ESTAS SEGURO QUE QUIERES VACIAR EL CARRITO?"))
+    }
+    function removeItem(products) {
+        
+        const updatedCartItems = productsAdded.filter((productAdded) => productAdded.id !== itemId);
+            setProductsAdded(updatedCartItems);
+            return(alert("el producto fue eliminado")            )  
+        };
+        
+        
+         
+        
+        
+        
+        
+    return <cartContext.Provider value={{productsAdded, onAdd ,clear,removeItem,totalProducts,totalPrice}}>
         {children}
         </cartContext.Provider>
          ;
