@@ -31,18 +31,22 @@ export  function CustomProvider({children}){
     
     const totalProducts=()=>productsAdded.reduce((acumulador,prodActual)=>acumulador+prodActual.quantity,0)
     const totalPrice=()=>{
-        productsAdded.reduce((prev,actual)=>prev+actual.quantity*actual.price,0)
+      return  productsAdded.reduce((prev,actual)=>prev+actual.quantity*actual.precio,0);
     }
     function clear() {    
         
         setProductsAdded([])
         return (alert("ESTAS SEGURO QUE QUIERES VACIAR EL CARRITO?"))
     }
-    function removeItem(products) {
-        
-        const updatedCartItems = productsAdded.filter((productAdded) => productAdded.id !== itemId);
-            setProductsAdded(updatedCartItems);
-            return(alert("el producto fue eliminado")            )  
+    function removeItem(prodToKill) {
+        console.log("id del product", prodToKill.id);
+        const updatedCartItems = productsAdded.filter((productAdded) => productAdded.id !== prodToKill);
+            
+        setProductsAdded(updatedCartItems);
+
+            return( 
+            console.log("a ver como quedo el product added luego de la eliminacion",productsAdded) 
+            )
         };
         
         

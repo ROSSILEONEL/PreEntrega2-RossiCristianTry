@@ -9,23 +9,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 // Import the functions you need from the SDKs you need
-// initializeApp
-// import { initializeApp } from "firebase/app";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
+initializeApp
+import { initializeApp } from "firebase/app";
 
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBLqylfmKYOwDCqUQSemvs6b1OZcm5vFzA",
-//   authDomain: "lazyskate-f6d13.firebaseapp.com",
-//   projectId: "lazyskate-f6d13",
-//   storageBucket: "lazyskate-f6d13.appspot.com",
-//   messagingSenderId: "753170695002",
-//   appId: "1:753170695002:web:7006cdcb8c6935da27a963"
-// };
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
+const firebaseConfig = {
+  apiKey: "AIzaSyBLqylfmKYOwDCqUQSemvs6b1OZcm5vFzA",
+  authDomain: "lazyskate-f6d13.firebaseapp.com",
+  projectId: "lazyskate-f6d13",
+  storageBucket: "lazyskate-f6d13.appspot.com",
+  messagingSenderId: "753170695002",
+  appId: "1:753170695002:web:7006cdcb8c6935da27a963"
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+
 import  Layout  from "./components/Layout";
 import ItemRoot from './routes/item';
 import Root from './routes/root';

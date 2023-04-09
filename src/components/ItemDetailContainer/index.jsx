@@ -8,7 +8,7 @@ import { useState , useEffect} from "react";
 function ItemDetailContainer(){
 const [itemFind,setItemFind]=useState(null);
  const param=useParams();
- console.log( "EL CONST DE PARAM", {param});
+
  const [carga,setCarga]=useState(false);
 
 

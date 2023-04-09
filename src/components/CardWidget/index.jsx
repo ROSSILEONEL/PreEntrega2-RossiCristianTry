@@ -3,17 +3,15 @@ import './CardWidget.css'
 import  {cartContext}  from '../../context';
 
 function CardWidget (){
-   const {productsAdded}= useContext(cartContext);
+   const {productsAdded,totalProducts}= useContext(cartContext);
 
-   console.log("context",cartContext);
-   console.log("prod added",{productsAdded});
     
    return(
         <div className='Card-Widget'>
             
             {/* <NavLink to={"/cart"}> */}
                 
-            <i  className="bi bi-cart nav-icon">  {productsAdded.length}</i>
+            <i  className="bi bi-cart nav-icon">  {totalProducts()||''}</i>
                 {/* </NavLink> */}
           
         </div>

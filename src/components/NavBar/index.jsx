@@ -7,7 +7,7 @@ import CardWidget from '../CardWidget'
 function NavBar(){
     return(
     // <div className='div-navBar'>
-        <Navbar bg='dark' variant='dark'>
+        <Navbar bg='dark' variant='ligth'>
         <ul className="">
              <NavLink to={"/"}><span>LAZY SKATE</span></NavLink>
             <li><NavLink to={"/"}>Home</NavLink></li>
