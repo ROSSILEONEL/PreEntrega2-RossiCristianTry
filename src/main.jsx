@@ -35,6 +35,7 @@ import Root from './routes/root';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import CardWidget from './components/CardWidget';
 import Cart from './components/CartView';
+import Checkout from './components/Checkout';
 
 const router = createBrowserRouter([
 {
@@ -55,19 +56,15 @@ const router = createBrowserRouter([
            
         ,
            {
-          path: "/checkout",
-          element: <ItemRoot/>,
+          path: "/Checkout",
+          element: <Checkout/>,
         }
         ,
            {
           path: "/Card",
           element: <Cart/>,
         }
-        ,
-        //    {
-        //   path: "/Cart",
-        //   element: <cart/>,
-        // }
+       
   ]
 }
 

@@ -3,16 +3,15 @@ import { Container , Card , Button , Image } from "react-bootstrap";
 import { cartContext } from "../../context";
 function ItemCart({ItemCart}) {
     const {removeItem}=useContext(cartContext);
-    return(<div>
-        <Container className="p-3 bg:dark">
+    return(<div className="container-fluid">
+        <Container className="d-flex p-3 bg:dark">
 
-        <Card style={{ width: '20rem' }}>
-      <Card.Img  variant="top" src="../../assets/imagen.jpg" />
+        <Card style={{ width: '15rem' }}>
+      <Card.Img  variant="top" src={`${ItemCart.imagen}`} />
       
       <Card.Body>
         <Card.Title>{ItemCart.name}</Card.Title>
         <Card.Text>
-          {ItemCart.descripcion}
         
           Precio: ${ItemCart.precio}
           Id:   {ItemCart.id}

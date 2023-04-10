@@ -4,6 +4,7 @@ import { createContext , useState } from "react";
 export const  cartContext= createContext();
 export  function CustomProvider({children}){
     const [productsAdded,setProductsAdded]=useState([]);
+
     
     function onAdd(products,quantity) {
         const isAlreadyAdded=isInCart(products);
@@ -35,8 +36,10 @@ export  function CustomProvider({children}){
     }
     function clear() {    
         
-        setProductsAdded([])
-        return (alert("ESTAS SEGURO QUE QUIERES VACIAR EL CARRITO?"))
+        return (
+            
+            setProductsAdded([])
+        )
     }
     function removeItem(prodToKill) {
         console.log("id del product", prodToKill.id);

@@ -3,7 +3,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import { cartContext } from "../../context";
 import { useState } from "react";
 // import { Container } from 'react-bootstrap';
-import Container from 'react-bootstrap/Container';
+import {Container, Card,CardImg,Button} from 'react-bootstrap';
 
 
 
@@ -20,20 +20,27 @@ function ItemDetail({itemF}) {
     return(
     <Container className="p-3">
 <div className="div-information">
-<h1>{itemF.name}</h1>
-<p>{itemF.descripcion}</p>
-<p>{itemF.medida}</p>
-<p>Categoria: {itemF.categoria}  Material: {itemF.material} </p>
-<p>Stock: {itemF.stock}</p>
-<h3>   $ {itemF.precio}    </h3>
-</div>
-
-
-    
-
+<Card style={{ width: '19rem' }}>
+      <Card.Img variant="top" src={itemF.imagen} />
+      <Card.Body>
+        <Card.Title>{itemF.name}</Card.Title>
+        <Card.Text>
+          {itemF.descripcion}
+         
+        </Card.Text>
+        <Card.Text>
+          
+         PRECIO:  ${itemF.precio}
+        </Card.Text>
+        
 <div className="div-count">
 <ItemCount stock={itemF.stock} onAdd={onAddProduct}/>
 </div>
+      </Card.Body>
+    </Card>
+ 
+</div> 
+
     </Container>
  )
 }
