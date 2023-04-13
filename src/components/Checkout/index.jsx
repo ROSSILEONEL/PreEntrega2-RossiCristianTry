@@ -6,8 +6,13 @@ const {idCompra}=useContext(cartContext);
 
     return(
         <div>
-            <h1>{idCompra}Muchas Gracias por su compra!  </h1>
-{console.log("en el checkout",idCompra)}
+            <h1>Muchas Gracias por su compra!  </h1>
+            <br />
+            <br />
+            <h3>Su codigo de seguimiento es:</h3>
+            <br />
+            <h2>{idCompra}</h2>
+
             <h2></h2>
         </div>
     

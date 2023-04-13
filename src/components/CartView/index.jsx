@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { cartContext } from "../../context";
-import { Container , Button, Form} from "react-bootstrap";
+import {   Button} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import  ItemCart  from "../ItemCart";
 import { addDoc, getFirestore ,collection} from "firebase/firestore";
@@ -71,27 +71,33 @@ const handleFormSubmit=()=>{
 
 
       {/* Agrega campos de entrada para los datos de la orden */}
-    <div className="container mt-5">
+    <div className="container mt-2">
       <h2>INGRESE SUS DATOS PARA LA COMPRA</h2>
-    <form  className="row" >
+    <form  className=" form-control rounded bg-light " >
     
 
-      <div className=" col-md-2">
-          <label >APELLIDO 
-            <input className="form-control" type="text" id="nom" placeholder="Ingrese Apellido"  />
+      <div className="d-flex col-md-3">
+          <label className="ms-2">NOMBRE 
+            <input className="" type="text" id="nom" placeholder="Ingrese Nombre y Apellido"  />
           </label>
           <label className="ms-2">DIRECCION 
             <input  type="text" id="dir" placeholder="Ingrese Apellido" />
           </label>
-          <label >TELEFONO 
-            <input  type="text" id="tel" placeholder="Ingrese un # de telefono" />
-          </label>
       </div>
       
-      <div className="col-md-3">
-      <label >EMAIL: </label>
-      <input   type="text" id="email"  placeholder="Ingrese su direccion de e-mail" />
+      <div className=" d-flex col-md-2 mt-2">
+          <label className="ms-2" >TELEFONO 
+            <input  className="ms-1" type="text" id="tel" placeholder="Ingrese un # de telefono" />
+          </label>
+          </div>
+          <div className=" d-flex col-md-2 mt-2">
+      
+      <label className=" " >EMAIL
+            <input  className="ms-0" type="email" id="email"  placeholder="Ingrese su direccion de e-mail" />
+      </label>
+      
       </div>
+      
       <div className="col-md-3">
     
       <NavLink to={"/Checkout"}>

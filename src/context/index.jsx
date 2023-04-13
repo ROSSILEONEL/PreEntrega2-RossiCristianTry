@@ -60,7 +60,7 @@ export  function CustomProvider({children}){
         
         
         
-    return <cartContext.Provider value={{productsAdded,isId, onAdd ,clear,removeItem,totalProducts,totalPrice}}>
+    return <cartContext.Provider value={{productsAdded,isId, onAdd ,clear,removeItem,totalProducts,totalPrice,idCompra}}>
         {children}
         </cartContext.Provider>
          ;
