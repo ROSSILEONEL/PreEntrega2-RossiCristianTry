@@ -1,13 +1,13 @@
 import React from 'react'
 import  Item  from "../Item/index";
-
+import './ItemList.css'
 
 
 function ItemList({item}) {
   
   
   return(
-<div className="d-flex align-content-between flex-nowrap" style={{maxwidth:"100%"}}>
+<div className="div-itemlist" >
 
   {
 

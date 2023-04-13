@@ -1,0 +1,15 @@
+.card-body{
+    border: solid grey 1px;
+background-color: rgb(40, 40, 40);
+color: grey;
+min-height: 10rem;
+}
+.card-itemcard{
+    max-height: 12rem;
+    max-width: 15rem;
+    border: solid rgb(76, 76, 76) 1px;
+
+}
+.card-img{
+    opacity: 50%;
+}

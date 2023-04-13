@@ -4,7 +4,7 @@ import { createContext , useState } from "react";
 export const  cartContext= createContext();
 export  function CustomProvider({children}){
     const [productsAdded,setProductsAdded]=useState([]);
-
+    const [idCompra,setIdCompra]=useState("");
     
     function onAdd(products,quantity) {
         const isAlreadyAdded=isInCart(products);
@@ -24,12 +24,14 @@ export  function CustomProvider({children}){
     };
     
     
+    function isId(params) {
+        setIdCompra(params);
+    }
     
     
     
     
-    
-    
+  
     const totalProducts=()=>productsAdded.reduce((acumulador,prodActual)=>acumulador+prodActual.quantity,0)
     const totalPrice=()=>{
       return  productsAdded.reduce((prev,actual)=>prev+actual.quantity*actual.precio,0);
@@ -58,7 +60,7 @@ export  function CustomProvider({children}){
         
         
         
-    return <cartContext.Provider value={{productsAdded, onAdd ,clear,removeItem,totalProducts,totalPrice}}>
+    return <cartContext.Provider value={{productsAdded,isId, onAdd ,clear,removeItem,totalProducts,totalPrice}}>
         {children}
         </cartContext.Provider>
          ;

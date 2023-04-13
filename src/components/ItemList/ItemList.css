@@ -1,0 +1,17 @@
+.div-itemlist{
+display: flex;
+flex-direction: row;
+margin: 150x;
+
+min-width: 100%;
+min-height: 30%;
+padding: 15px;
+column-gap: 10px;
+justify-content: space-around;
+flex-wrap: wrap;
+background-color: rgb(0, 0, 0);
+}
+.item{
+    margin-top: 20px;
+    padding: 20px;
+}

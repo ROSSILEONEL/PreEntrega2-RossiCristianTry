@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { Card ,Container,Row, Col} from "react-bootstrap";
-
+import './Item.css';
 function Item({arrP}) {
  
 return(
    
-<Container >
 
-   <Card style={{ minHeight:'20rem', width: '15rem' }}>
+
+   <Card className="card-item" style={{ minHeight:'20rem', width: '15rem' }}>
       <Card.Img  variant="top" src={`${arrP.imagen}`} alt=" " />
       
       <Card.Body>
@@ -24,7 +24,7 @@ return(
       </Card.Body>
     </Card>
 
-</Container>
+
         
 
 

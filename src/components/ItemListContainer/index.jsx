@@ -3,6 +3,7 @@ import products from "../../Mocks/products";
 import ItemList from "../ItemList/index.jsx"
 import {getFirestore, collection,getDocs,query, where} from 'firebase/firestore'
 import { useParams } from "react-router-dom";
+import './ItemListContainer.css'
 
 function ItemListContainer({isCategoryRoute, categoryId}){
 // Creo una variable state para que cargue aca la lista si la promesa anda
@@ -31,8 +32,10 @@ if(isCategoryRoute){
  console.log({listaProd});
  
  return (
+<div className="div-itemlistcontainer">
 
-   <ItemList item={listaProd}/>
+   <ItemList className="div-itemlist" item={listaProd}/>
+</div>
 
      )
     }
