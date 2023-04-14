@@ -3,12 +3,22 @@ import { cartContext } from "../../context";
 import {   Button} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import  ItemCart  from "../ItemCart";
-import { addDoc, getFirestore ,collection} from "firebase/firestore";
+import {doc, addDoc, getFirestore ,collection,updateDoc} from "firebase/firestore";
 
 import './CartView.css'
 function Cart() {
   const {productsAdded,totalPrice,clear,isId}=useContext(cartContext);
+
+  function updateOrder(productid, finalStock){
+    const db=getFirestore();
+    const itemRef=doc(db,"products",productid);
+      
+    updateDoc(itemRef,{stock: finalStock});
+  }
   
+
+
+
   let orderId;
 const handleFormSubmit=()=>{
       const nom= document.getElementById("nom").value;
@@ -29,11 +39,16 @@ const handleFormSubmit=()=>{
       const ordersCollection=collection(db,'orders');  
       addDoc(ordersCollection,order )
       .then(({id})=> {
-
-        console.log("id de la compra es ",id);
-        orderId=id
-        console.log(orderId);
         isId(id);
+        productsAdded.map((item)=>{
+          const finalStock=item.stock- item.quantity;
+          console.log(finalStock);
+          console.log(item.stock);
+          console.log(item.quantity);
+          console.log(item.id);
+          updateOrder(item.id,finalStock)})
+
+      
         console.log("idcompra",idCompra);
       }).catch((error) => {console.error("Error adding order: ", error);})
         clear();

@@ -29,6 +29,12 @@ function ItemDetail({itemF}) {
          
         </Card.Text>
         <Card.Text>
+          <span>
+Stock:             {itemF.stock}
+          </span>
+         
+        </Card.Text>
+        <Card.Text>
           
          PRECIO:  ${itemF.precio}
         </Card.Text>
